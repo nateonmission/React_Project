@@ -1,1 +1,1 @@
-A Project for <CL>
+A Project for CodeLouisville
