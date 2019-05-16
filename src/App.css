@@ -8,11 +8,16 @@
   pointer-events: none;
 }
 
-.App-header {
+.App-body {
   background-color: #282c34;
+  border: darkgray solid 5px;
+  border-radius: 10%;
   min-height: 100vh;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  margin: 5REM auto;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -21,6 +26,53 @@
 
 .App-link {
   color: #61dafb;
+}
+
+nav {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 0;
+  list-style: none;
+  border: darkgray solid 0.25 REM;
+}
+
+nav ul li {
+  margin: 1REM;
+  padding: 1REM;
+  border: darkgray solid 0.25REM;
+  border-radius: 10%;
+}
+
+nav ul li:hover {
+  background-color: dodgerblue;
+}
+
+nav ul li.active {
+  background-color: dodgerblue;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover {
+  color: white;
+}
+
+
+.content {
+  margin: 1REM;
+  padding: 1REM;
+  border: darkgray solid 0.25REM;
+  border-radius: 10%;
+  max-width: 90%;
 }
 
 @keyframes App-logo-spin {
