@@ -28,7 +28,7 @@ class Home extends Component {
     var { isLoaded, title, shows } = this.state
 
     if (!isLoaded) {
-      return <div className='content'>Loading...{console.log(shows)}</div>
+      return <div className='content'>Loading...</div>
     } else {
       return (
         <div className='content'>
@@ -38,7 +38,8 @@ class Home extends Component {
           home
           </p>
           <ul>
-            <li>{console.log(shows.series)}</li>
+            
+            {shows.series.map(show => <li key={show.uid}>{show.title}</li>)}
             
           </ul>
         </div>
