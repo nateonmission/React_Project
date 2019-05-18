@@ -1,24 +1,51 @@
-import React from 'react'
+import React, { Component } from 'react'
 import logo from './logo.svg'
 
+class Home extends Component {
 
-const Home = (props) => (
-  <div className='content'>
-    <h1>{props.title}</h1>
-    <img src={logo} className='App-logo' alt='logo' />
-    <p>
-      home
-    </p>
-    <a
-      className='App-link'
-      href='https://reactjs.org'
-      target='_blank'
-      rel='noopener noreferrer'
-    >
-      Learn React
-    </a>
-  </div>
-)
+  constructor (props) {
+    super(props)
+    this.state = {
+      isLoaded: false,
+      title: props.title,
+      shows: []
+    } // End state
+    console.log(this.state)
+  } // End constructor
 
+  componentDidMount () {
+    fetch('http://stapi.co/api/v1/rest/series/search?')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          isLoaded: true,
+          shows: json
+        })
+      })
+  }
+
+  render (props) {
+    var { isLoaded, title, shows } = this.state
+
+    if (!isLoaded) {
+      return <div className='content'>Loading...{console.log(shows)}</div>
+    } else {
+      return (
+        <div className='content'>
+          <h1>{title}</h1>
+          <img src={logo} className='App-logo' alt='logo' />
+          <p>
+          home
+          </p>
+          <ul>
+            <li>{console.log(shows.series)}</li>
+            
+          </ul>
+        </div>
+      )
+    }
+  } // End render
+
+} // End Class
 
 export default Home
