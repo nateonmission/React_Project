@@ -83,3 +83,7 @@ nav a:hover {
     transform: rotate(360deg);
   }
 }
+
+.showsMenu {
+  list-style: none;
+}

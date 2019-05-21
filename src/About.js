@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from './logo.svg'
 
-
 const About = (props) => (
   <div className='content'>
     <h1>{props.title}</h1>
