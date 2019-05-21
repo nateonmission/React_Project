@@ -37,14 +37,14 @@ class Home extends Component {
 
           <ul className='showsMenu'>
 
-            {shows.series.map(show => <li key={show.uid}>{show.title} ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
+            {shows.series.map(show => <li key={show.uid}>{show.title}&nbsp;
+              ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
 
           </ul>
         </div>
       )
     }
   } // End render
-
 } // End Class
 
 export default Home
