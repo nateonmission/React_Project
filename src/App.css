@@ -87,3 +87,12 @@ nav a:hover {
 .showsMenu {
   list-style: none;
 }
+
+
+@media (max-width: 1000px) {
+nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+}
