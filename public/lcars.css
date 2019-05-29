@@ -598,6 +598,7 @@ h6 {
   padding-left: 0.166666666666667rem;
   padding-right: 0.166666666666667rem;
   padding-bottom: 0.166666666666667rem;
+  /*border: green solid 1px;*/
   display: inline-block;
   font-size: 150%;
   height: 100%;

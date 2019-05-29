@@ -24,7 +24,9 @@ const App = () => (
         <Route exact path='/movies' render={() => <Movies title='MOVIES' />} />
         <Route exact path='/books' render={() => <Books title='BOOKS' />} />
         <Route exact path='/about' render={() => <About title='ABOUT' />} />
+        
       </section>
+      
     </div>
   </BrowserRouter>
 )

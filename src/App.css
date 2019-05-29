@@ -24,6 +24,10 @@
   color: white;
 }
 
+h1 {
+  margin: -2REM auto 0;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -31,6 +35,10 @@
 nav {
   margin: 0 auto;
   max-width: 80%;
+}
+
+a.active {
+  background-color: #d64 !important;
 }
 
 nav ul {
@@ -41,23 +49,23 @@ nav ul {
   list-style: none;
   /*border: darkgray solid 0.25 REM;*/
 }
-
+/*
 nav ul li {
   margin: 0.2REM;
   padding: 0;
-  /*border: darkgray solid 0.25REM;*/
-  /*border-radius: 10%;*/
-}
+}*/
 
-nav ul li:hover {
+nav a:hover {
   background-color: #c69 !important;
 }
 
-nav ul li.active {
+nav a:active {
   background-color: dodgerblue !important;
 }
 
 nav a {
+  margin: 0.2REM;
+  padding: 0;
   text-decoration: none;
   color: black;
 }
