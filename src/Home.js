@@ -34,13 +34,6 @@ class Home extends Component {
         <div className='content'>
           <h1>{title}</h1>
           <img src={logo} className='App-logo' alt='logo' />
-
-          <ul className='showsMenu'>
-
-            {shows.series.map(show => <li key={show.uid}>{show.title}&nbsp;
-              ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
-
-          </ul>
         </div>
       )
     }
