@@ -34,14 +34,31 @@ class Shows extends Component {
       return (
 
         <div className='content'>
-          <h1>{title}</h1>
+          <h1 className='lcars-neon-carrot-color'>{title}</h1>
 
-          <ul className='showsMenu'>
+          <div className='splitDiv'>
+            <div className='subContainer'>
+              <div className='lcars-bracket left hollow'></div>
+              <ul className='showsMenu'>
 
-            {shows.map(show => <li key={show.uid}>{show.title}&nbsp;
-              ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
+                {shows.map(show => <li key={show.uid}>{show.title}&nbsp;
+                  ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
 
-          </ul>
+              </ul>
+              <div className='lcars-bracket right hollow'></div>
+            </div>
+
+            <div className='subContainer'>
+              <div className='lcars-bracket left hollow'></div>
+              <ul className='showsMenu'>
+
+                {shows.map(show => <li key={show.uid}>{show.title}&nbsp;
+                  ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
+
+              </ul>
+              <div className='lcars-bracket right hollow'></div>
+            </div>
+          </div>
         </div>
       )
     }

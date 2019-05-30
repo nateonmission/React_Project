@@ -83,6 +83,12 @@ nav a:hover {
   min-width: 70vw;
 }
 
+.splitDiv {
+  justify-content: space-around;
+  display: flex;
+  margin: 0 auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -92,10 +98,19 @@ nav a:hover {
   }
 }
 
+.subContainer {
+  display: flex;
+}
+
 .showsMenu {
   list-style: none;
 }
 
+@media (max-width: 1750px) {
+  .splitDiv {
+    flex-direction: column;
+  }
+}
 
 @media (max-width: 1000px) {
 nav ul {
