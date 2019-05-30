@@ -17,9 +17,10 @@ class Shows extends Component {
     fetch('http://stapi.co/api/v1/rest/series/search?')
       .then(res => res.json())
       .then(json => {
+        json.series.sort((a, b) => a.productionStartYear - b.productionStartYear);
         this.setState({
           isLoaded: true,
-          shows: json
+          shows: json.series
         })
       })
   }
@@ -31,13 +32,13 @@ class Shows extends Component {
       return <div className='content'>Loading...</div>
     } else {
       return (
+
         <div className='content'>
           <h1>{title}</h1>
-          <img src={logo} className='App-logo' alt='logo' />
 
           <ul className='showsMenu'>
 
-            {shows.series.map(show => <li key={show.uid}>{show.title}&nbsp;
+            {shows.map(show => <li key={show.uid}>{show.title}&nbsp;
               ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
 
           </ul>
