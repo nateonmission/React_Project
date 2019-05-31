@@ -25,7 +25,8 @@
 }
 
 h1 {
-  margin: -2REM auto 0;
+  margin: -1REM auto 0;
+  font-family: 'Rambla', sans-serif;
 }
 
 .App-link {
@@ -35,6 +36,7 @@ h1 {
 nav {
   margin: 0 auto;
   max-width: 80%;
+  font-family: 'Rambla', sans-serif;
 }
 
 a.active {

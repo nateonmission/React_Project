@@ -32,8 +32,15 @@ class Home extends Component {
     } else {
       return (
         <div className='content'>
-          <h1>{title}</h1>
-          <img src={logo} className='App-logo' alt='logo' />
+          <h1 className='lcars-title lcars-neon-carrot-color'>{title}</h1>
+
+          <div className='splitDiv'>
+            <div className='subContainer'>
+              <div className='lcars-bracket left hollow'></div>
+              <img src={logo} className='App-logo' alt='logo' />
+              <div className='lcars-bracket right hollow'></div>
+            </div>
+          </div>
         </div>
       )
     }

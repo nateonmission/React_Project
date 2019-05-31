@@ -20,13 +20,11 @@ const App = () => (
       <section className='App-body'>
         <Navagation />
         <Route exact path='/' render={() => <Home title='HOME' />} />
-        <Route exact path='/shows' render={() => <Shows title='SHOWS' />} />
+        <Route exact path='/shows' render={() => <Shows title='Star Trek TV Series' />} />
         <Route exact path='/movies' render={() => <Movies title='MOVIES' />} />
         <Route exact path='/books' render={() => <Books title='BOOKS' />} />
-        <Route exact path='/about' render={() => <About title='ABOUT' />} />
-        
+        <Route exact path='/about' render={() => <About title='ABOUT' />} /> 
       </section>
-      
     </div>
   </BrowserRouter>
 )
