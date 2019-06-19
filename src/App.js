@@ -10,7 +10,6 @@ import './App.css'
 import Home from './Home'
 import Shows from './Shows'
 import Movies from './Movies'
-import Books from './Books'
 import About from './About'
 import Navagation from './Navagation'
 
@@ -19,11 +18,10 @@ const App = () => (
     <div className='App'>
       <section className='App-body'>
         <Navagation />
-        <Route exact path='/' render={() => <Home title='HOME' />} />
+        <Route exact path='/' render={() => <Home title='Home' />} />
         <Route exact path='/shows' render={() => <Shows title='Star Trek TV Series' />} />
-        <Route exact path='/movies' render={() => <Movies title='MOVIES' />} />
-        <Route exact path='/books' render={() => <Books title='BOOKS' />} />
-        <Route exact path='/about' render={() => <About title='ABOUT' />} /> 
+        <Route exact path='/movies' render={() => <Movies title='Star Trek Movies' />} />
+        <Route exact path='/about' render={() => <About title='About' />} />
       </section>
     </div>
   </BrowserRouter>

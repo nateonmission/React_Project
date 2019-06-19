@@ -4,9 +4,11 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 40vh;
   pointer-events: none;
   padding: 1REM;
+  margin: auto;
+  /*border: darkgray solid 5px;*/
 }
 
 .App-body {
@@ -25,7 +27,7 @@
 }
 
 h1 {
-  margin: -1REM auto 0;
+  margin: -1REM auto 2REM;
   font-family: 'Rambla', sans-serif;
 }
 
@@ -80,16 +82,12 @@ nav a:hover {
 .content {
   margin: 1REM;
   padding: 1REM;
-  border: darkgray solid 0.25REM;
+  /* border: darkgray solid 0.25REM; */
   border-radius: 10%;
   min-width: 70vw;
 }
 
-.splitDiv {
-  justify-content: space-around;
-  display: flex;
-  margin: 0 auto;
-}
+
 
 @keyframes App-logo-spin {
   from {
@@ -100,24 +98,115 @@ nav a:hover {
   }
 }
 
-.subContainer {
+.splitDiv {
+  justify-content: space-around;
   display: flex;
+  margin: 0 auto;
 }
 
+.subContainer {
+  display: flex;
+  max-width: 45%;
+}
+
+.innerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*border: #61dafb solid 1px;*/
+}
 .showsMenu {
   list-style: none;
 }
 
-@media (max-width: 1750px) {
-  .splitDiv {
-    flex-direction: column;
-  }
+ul.listItem {
+  margin-left: -3REM;
 }
 
-@media (max-width: 1000px) {
+.listItem {
+  font-size: 1.5REM;
+  margin: 0REM 1REM 0REM -2REM;
+  
+}
+
+.listItem:hover {
+  background-color: #746;
+}
+
+/********** LCARS Mods **********/
+.lcars-bracket {
+  min-width: 2REM;
+}
+
+/********** Media Calls **********/
+@media (max-width: 1747px) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 30vmin;
+    pointer-events: none;
+    padding: 1REM;
+  }
+
+  .splitDiv {
+    flex-direction: row;
+  }
+
+  .listItem {
+    font-size: 1REM;
+  }
+
+} /* End Media Call 1700px */
+
+@media (max-width: 1175px) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 20vmin;
+    pointer-events: none;
+    padding: 1REM;
+  }
 nav ul {
   display: flex;
   flex-direction: column;
 }
 
+.splitDiv {
+  /*justify-content: space-around;*/
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  margin: 0 auto;
 }
+
+.subContainer {
+  margin: 1REM;
+  font-size: 1.5REM;
+  display: flex;
+  max-width: 95%;
+
+}
+
+nav {
+  /*border: green solid 1px;*/
+  
+  width: 100%;
+}
+
+nav ul {
+  /*border: blue solid 1px;*/
+  align-content: center;
+}
+
+nav ul li {
+  /*border: red solid 1px;*/
+  
+  min-width: 90%;
+}
+.nav-item {
+  width: 100%;
+  text-align: center;
+  border-radius: 1.5rem;
+ 
+  padding-left: 1.5rem;
+}
+
+} /* End Media Call 1175px */

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 
 class Shows extends Component {
-
   constructor (props) {
     super(props)
     this.state = {
@@ -17,7 +16,7 @@ class Shows extends Component {
     fetch('http://stapi.co/api/v1/rest/series/search?')
       .then(res => res.json())
       .then(json => {
-        json.series.sort((a, b) => a.productionStartYear - b.productionStartYear);
+        json.series.sort((a, b) => a.productionStartYear - b.productionStartYear)
         this.setState({
           isLoaded: true,
           shows: json.series
@@ -27,6 +26,15 @@ class Shows extends Component {
 
   render (props) {
     var { isLoaded, title, shows } = this.state
+
+    function showInfo (title) {
+      fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=Discovery&country=us`)
+        .header('X-RapidAPI-Host', 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com')
+        .header('X-RapidAPI-Key', '7f280763d6msha8c9035cb1174a1p142b25jsn4b72203721af')
+        .end(function (result) {
+          console.log(result.status, result.headers, result.body)
+        })
+    }
 
     if (!isLoaded) {
       return <div className='content'>Loading...</div>
@@ -39,23 +47,24 @@ class Shows extends Component {
           <div className='splitDiv'>
             <div className='subContainer'>
               <div className='lcars-bracket left hollow'></div>
-              <ul className='showsMenu'>
+              <div className='innerContainer'>
+                <ul className='showsMenu'>
 
-                {shows.map(show => <li key={show.uid}>{show.title}&nbsp;
-                  ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
+                  {shows.map(show => <li className='listItem' key={show.uid} onClick={showInfo}>{show.title}&nbsp;
+                    ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
 
-              </ul>
+                </ul>
+              </div>
               <div className='lcars-bracket right hollow'></div>
             </div>
 
             <div className='subContainer'>
               <div className='lcars-bracket left hollow'></div>
-              <ul className='showsMenu'>
-
-                {shows.map(show => <li key={show.uid}>{show.title}&nbsp;
-                  ({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
-
-              </ul>
+              <div className='innerContainer'>
+                <ul className='showsMenu'>
+                  <img src={logo} className='App-logo' alt='logo' />
+                </ul>
+              </div>
               <div className='lcars-bracket right hollow'></div>
             </div>
           </div>
