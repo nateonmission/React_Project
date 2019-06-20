@@ -19,8 +19,8 @@ const App = () => (
       <section className='App-body'>
         <Navagation />
         <Route exact path='/' render={() => <Home title='Home' />} />
-        <Route exact path='/shows' render={() => <Shows title='Star Trek TV Series' />} />
-        <Route exact path='/movies' render={() => <Movies title='Star Trek Movies' />} />
+        <Route exact path='/shows' render={() => <Shows title='Star Trek TV Series' apitag='series' />} />
+        <Route exact path='/movies' render={() => <Movies title='Star Trek Movies' apitag='movie' />} />
         <Route exact path='/about' render={() => <About title='About' />} />
       </section>
     </div>

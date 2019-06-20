@@ -6,7 +6,8 @@ class Home extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      title: props.title
+      title: props.title,
+      apitag: props.apitag
     } // End state
     console.log(this.state)
   } // End constructor

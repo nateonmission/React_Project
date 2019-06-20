@@ -115,6 +115,8 @@ nav a:hover {
   justify-content: center;
   /*border: #61dafb solid 1px;*/
 }
+
+/********** Media Lists Menu **********/
 .showsMenu {
   list-style: none;
 }
@@ -131,6 +133,11 @@ ul.listItem {
 
 .listItem:hover {
   background-color: #746;
+}
+
+/********** Media Info Content **********/
+.showsContent ul {
+  list-style: none;
 }
 
 /********** LCARS Mods **********/
