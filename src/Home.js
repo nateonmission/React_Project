@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+// import logo from './logo.svg'
+import Logo from '.Logo.js'
 
 class Home extends Component {
 
@@ -7,12 +8,14 @@ class Home extends Component {
     super(props)
     this.state = {
       title: props.title,
-      apitag: props.apitag
+      apitag: props.apitag,
+      divLeft: props.divLeft,
+      divRight: props.divRight
     } // End state
     console.log(this.state)
   } // End constructor
 
-  render (props) {
+  render () {
     var { title } = this.state
     return (
       <div className='content'>
@@ -20,14 +23,14 @@ class Home extends Component {
         <div className='splitDiv'>
           <div className='subContainer'>
             <div className='lcars-bracket left hollow'></div>
-            <div className='innerContainer'>
-              <img src={logo} className='App-logo' alt='logo' />
+            <div className='innerContainer ICLeft'>
+              <Logo /> {/*<img src={logo} className='App-logo' alt='logo' /> */}
             </div>
             <div className='lcars-bracket right hollow'></div>
           </div>
           <div className='subContainer'>
             <div className='lcars-bracket left hollow'></div>
-            <div className='innerContainer'>
+            <div className='innerContainer ICRight'>
               <p>LCARS Access - Select media from the menu above. 
               Titles will appear in the frame to the LEFT. Click on a title to get more information in this frame.</p>
             </div>

@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
-// import { thisTypeAnnotation } from '@babel/types'
 
-//import SplitScreen from './SplitScreen'
-
-class Shows extends Component {
+class SplitScreen extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -80,7 +77,7 @@ class Shows extends Component {
                 <ul className='showsContent'>
                   {!isLoadedInfo
                     ? <img src={logo} className='App-logo' alt='logo' />
-                    : <h2> {isLoadedInfo} </h2>
+                    : <img src={showsInfo.picture} alt='Show Image' />
                   }
                 </ul>
               </div>
@@ -93,4 +90,4 @@ class Shows extends Component {
   } // End render
 } // End Class
 
-export default Shows
+export default SplitScreen
