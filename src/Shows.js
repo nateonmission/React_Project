@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import Logo from './Logo'
+import ShowsMenu from './ShowsMenu'
 // import { thisTypeAnnotation } from '@babel/types'
 
-//import SplitScreen from './SplitScreen'
+// import SplitScreen from './SplitScreen'
 
 class Shows extends Component {
   constructor (props) {
@@ -12,8 +13,8 @@ class Shows extends Component {
       isLoadedInfo: false,
       title: props.title,
       shows: [],
-      showsInfo: [],
-      apitag: props.apitag
+      apitag: props.apitag,
+      getShowInfo: props.getShowInfo
     } // End state
   } // End constructor
 
@@ -31,26 +32,7 @@ class Shows extends Component {
   }
 
   render () {
-    var { isLoaded, isLoadedInfo, title, shows, showsInfo } = this.state
-
-    function getShowInfo (showTitle, showsInfo, isLoadedInfo) {
-      console.log(showTitle, showsInfo, isLoadedInfo)
-      fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${showTitle}&country=us`, {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com',
-          'X-RapidAPI-Key': '7f280763d6msha8c9035cb1174a1p142b25jsn4b72203721af'
-        } }
-      )
-        .then(res => res.json())
-        .then(json => {
-          console.log(json)
-          isLoadedInfo = true
-          showsInfo = json.results[0]
-          console.log(showTitle, showsInfo, isLoadedInfo)
-        })
-      
-    }
+    var { isLoaded, isLoadedInfo, title, shows } = this.state
 
     if (!isLoaded) {
       return <div className='content'>Loading...</div>
@@ -64,12 +46,15 @@ class Shows extends Component {
             <div className='subContainer'>
               <div className='lcars-bracket left hollow'></div>
               <div className='innerContainer'>
+                <ShowsMenu shows={shows} apitag={this.state.apitag} getShowInfo={this.state.getShowInfo} />
+                {/*
                 <ul className='showsMenu'>
 
                   {shows.map(show => <li className='listItem' key={show.uid} onClick={() => { getShowInfo(show.title, showsInfo, isLoadedInfo) }}>
                     {show.title}&nbsp;({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
 
                 </ul>
+                */}
               </div>
               <div className='lcars-bracket right hollow'></div>
             </div>
@@ -79,7 +64,7 @@ class Shows extends Component {
               <div className='innerContainer'>
                 <ul className='showsContent'>
                   {!isLoadedInfo
-                    ? <img src={logo} className='App-logo' alt='logo' />
+                    ? <Logo /> 
                     : <h2> {isLoadedInfo} </h2>
                   }
                 </ul>

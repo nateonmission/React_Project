@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import logo from './logo.svg'
-import Logo from '.Logo.js'
+import Logo from './Logo'
 
 class Home extends Component {
 
@@ -24,7 +24,7 @@ class Home extends Component {
           <div className='subContainer'>
             <div className='lcars-bracket left hollow'></div>
             <div className='innerContainer ICLeft'>
-              <Logo /> {/*<img src={logo} className='App-logo' alt='logo' /> */}
+              <Logo />
             </div>
             <div className='lcars-bracket right hollow'></div>
           </div>
