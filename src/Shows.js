@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Logo from './Logo'
 import ShowsMenu from './ShowsMenu'
+import ShowResult from './ShowResult'
 // import { thisTypeAnnotation } from '@babel/types'
 
 // import SplitScreen from './SplitScreen'
@@ -9,12 +10,14 @@ class Shows extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      isLoaded: false,
-      isLoadedInfo: false,
+      isLoaded: props.isLoaded,
+      isLoadedInfo: props.isLoadedInfo,
       title: props.title,
       shows: [],
       apitag: props.apitag,
-      getShowInfo: props.getShowInfo
+      getShowInfo: props.getShowInfo,
+      showContents: props.showContents,
+      showsInfo: props.showsInfo
     } // End state
   } // End constructor
 
@@ -29,6 +32,7 @@ class Shows extends Component {
           shows: json.series
         })
       })
+    console.log('shows')
   }
 
   render () {
@@ -47,14 +51,6 @@ class Shows extends Component {
               <div className='lcars-bracket left hollow'></div>
               <div className='innerContainer'>
                 <ShowsMenu shows={shows} apitag={this.state.apitag} getShowInfo={this.state.getShowInfo} />
-                {/*
-                <ul className='showsMenu'>
-
-                  {shows.map(show => <li className='listItem' key={show.uid} onClick={() => { getShowInfo(show.title, showsInfo, isLoadedInfo) }}>
-                    {show.title}&nbsp;({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
-
-                </ul>
-                */}
               </div>
               <div className='lcars-bracket right hollow'></div>
             </div>
@@ -64,8 +60,8 @@ class Shows extends Component {
               <div className='innerContainer'>
                 <ul className='showsContent'>
                   {!isLoadedInfo
-                    ? <Logo /> 
-                    : <h2> {isLoadedInfo} </h2>
+                    ? <Logo />
+                    : <ShowResult shows={shows} apitag={this.state.apitag} getShowInfo={this.state.getShowInfo} />
                   }
                 </ul>
               </div>
