@@ -15,9 +15,9 @@ class Shows extends Component {
       title: props.title,
       shows: [],
       apitag: props.apitag,
-      getShowInfo: props.getShowInfo,
-      showContents: props.showContents,
-      showsInfo: props.showsInfo
+      // getShowInfo: getShowInfo,
+      // showContents: showContents,
+      showsInfo: []
     } // End state
   } // End constructor
 
@@ -35,7 +35,23 @@ class Shows extends Component {
     console.log('shows')
   }
 
-  render () {
+  getShowInfo (showTitle, showsInfo, isLoadedInfo) {
+    fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${showTitle}&country=us`, {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com',
+        'X-RapidAPI-Key': '7f280763d6msha8c9035cb1174a1p142b25jsn4b72203721af'
+      } }
+    )
+      .then(res => res.json())
+      .then(json => {
+        isLoadedInfo = true
+        showsInfo = json.results[0]
+        console.log(showTitle, showsInfo, isLoadedInfo)
+      })
+  }
+
+  render (getShowInfo) {
     var { isLoaded, isLoadedInfo, title, shows } = this.state
 
     if (!isLoaded) {
@@ -50,7 +66,7 @@ class Shows extends Component {
             <div className='subContainer'>
               <div className='lcars-bracket left hollow'></div>
               <div className='innerContainer'>
-                <ShowsMenu shows={shows} apitag={this.state.apitag} getShowInfo={this.state.getShowInfo} />
+                <ShowsMenu isLoadedInfo={isLoadedInfo} shows={shows} apitag={this.state.apitag} getShowInfo={getShowInfo} />
               </div>
               <div className='lcars-bracket right hollow'></div>
             </div>
@@ -61,7 +77,7 @@ class Shows extends Component {
                 <ul className='showsContent'>
                   {!isLoadedInfo
                     ? <Logo />
-                    : <ShowResult shows={shows} apitag={this.state.apitag} getShowInfo={this.state.getShowInfo} />
+                    : <ShowResult shows={shows} apitag={this.state.apitag} getShowInfo={getShowInfo} />
                   }
                 </ul>
               </div>

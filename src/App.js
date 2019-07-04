@@ -52,7 +52,10 @@ const App = () => (
           showsInfo={state.showsInfo}
           isLoadedInfo={state.isLoadedInfo}
         />} />
-        <Route exact path='/movies' render={() => <Movies title='Star Trek Movies' apitag='movie' />} />
+        <Route exact path='/movies' render={() => <Movies
+          title='Star Trek Movies'
+          apitag='movie'
+        />} />
         <Route exact path='/about' render={() => <About title='About' />} />
       </section>
     </div>
