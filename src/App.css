@@ -116,6 +116,10 @@ nav a:hover {
   /*border: #61dafb solid 1px;*/
 }
 
+.showsPicture {
+  max-width: 95%;
+}
+
 /********** Media Lists Menu **********/
 .showsMenu {
   list-style: none;

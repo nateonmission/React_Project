@@ -13,34 +13,6 @@ import Movies from './Movies'
 import About from './About'
 import Navagation from './Navagation'
 
-/*
-const getShowInfo = (showTitle, showsInfo, isLoadedInfo) => {
-  fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${showTitle}&country=us`, {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com',
-      'X-RapidAPI-Key': '7f280763d6msha8c9035cb1174a1p142b25jsn4b72203721af'
-    } }
-  )
-    .then(res => res.json())
-    .then(json => {
-      isLoadedInfo = true
-      showsInfo = json.results[0]
-      console.log(showTitle, showsInfo, isLoadedInfo)
-    })
-}
-
-let state = {
-  isLoaded: false,
-  isLoadedInfo: false,
-  title: '',
-  shows: [],
-  apitag: ''
-  // getShowInfo: getShowInfo,
-  // showsInfo: []
-} // End state
-*/
-
 const App = () => (
   <BrowserRouter>
     <div className='App'>

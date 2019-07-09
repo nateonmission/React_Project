@@ -48,8 +48,6 @@ class Shows extends Component {
           isLoadedInfo: true,
           showsInfo: json.results[0]
         }))
-        // isLoadedInfo = true
-        // showsInfo = json.results[0]
         console.log(showTitle, this.state.showsInfo, this.state.isLoadedInfo)
       })
   }
@@ -85,7 +83,10 @@ class Shows extends Component {
                 <ul className='showsContent'>
                   {!isLoadedInfo
                     ? <Logo />
-                    : <ShowResult shows={shows} apitag={this.state.apitag} getShowInfo={getShowInfo} />
+                    : <ShowResult
+                      isLoadedInfo={this.state.isLoadedInfo}
+                      showsInfo={this.state.showsInfo}
+                    />
                   }
                 </ul>
               </div>
