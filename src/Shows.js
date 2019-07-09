@@ -34,6 +34,9 @@ class Shows extends Component {
   }
 
   getShowInfo (showTitle) {
+    this.setState(prevState => ({
+      isLoadedInfo: false
+    }))
     fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${showTitle}&country=us`, {
       method: 'GET',
       headers: {
