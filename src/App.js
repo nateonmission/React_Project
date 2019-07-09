@@ -13,6 +13,7 @@ import Movies from './Movies'
 import About from './About'
 import Navagation from './Navagation'
 
+/*
 const getShowInfo = (showTitle, showsInfo, isLoadedInfo) => {
   fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${showTitle}&country=us`, {
     method: 'GET',
@@ -34,10 +35,11 @@ let state = {
   isLoadedInfo: false,
   title: '',
   shows: [],
-  apitag: '',
-  getShowInfo: getShowInfo,
-  showsInfo: []
+  apitag: ''
+  // getShowInfo: getShowInfo,
+  // showsInfo: []
 } // End state
+*/
 
 const App = () => (
   <BrowserRouter>
@@ -48,9 +50,9 @@ const App = () => (
         <Route exact path='/shows' render={() => <Shows
           title='Star Trek TV Series'
           apitag='series'
-          getShowInfo={getShowInfo}
-          showsInfo={state.showsInfo}
-          isLoadedInfo={state.isLoadedInfo}
+          // getShowInfo={getShowInfo}
+          // showsInfo={state.showsInfo}
+          // isLoadedInfo={state.isLoadedInfo}
         />} />
         <Route exact path='/movies' render={() => <Movies
           title='Star Trek Movies'
