@@ -117,7 +117,8 @@ nav a:hover {
 }
 
 .showsPicture {
-  max-width: 95%;
+  margin: 0 auto;
+  max-width: 85%;
 }
 
 /********** Media Lists Menu **********/
@@ -126,7 +127,7 @@ nav a:hover {
 }
 
 ul.listItem {
-  margin-left: -3REM;
+  margin-left: -2REM;
 }
 
 .listItem {
@@ -137,6 +138,29 @@ ul.listItem {
 
 .listItem:hover {
   background-color: #746;
+}
+
+.resultsMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  margin-left: -2REM;
+}
+
+.services {
+  margin: 0 3REM;
+  display: flex;
+  justify-content: space-around;
+}
+
+.servicesItem {
+  padding: 1REM;
+  border: solid 0.5REM rgb(0, 0, 0);
+}
+
+.servicesItem:hover {
+  border: solid 0.5REM rgb(24, 128, 212);
 }
 
 /********** Media Info Content **********/
@@ -150,25 +174,8 @@ ul.listItem {
 }
 
 /********** Media Calls **********/
-@media (max-width: 1747px) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 30vmin;
-    pointer-events: none;
-    padding: 1REM;
-  }
 
-  .splitDiv {
-    flex-direction: row;
-  }
-
-  .listItem {
-    font-size: 1REM;
-  }
-
-} /* End Media Call 1700px */
-
-@media (max-width: 1175px) {
+@media (max-width: 1500px) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 20vmin;
@@ -193,8 +200,11 @@ nav ul {
   font-size: 1.5REM;
   display: flex;
   max-width: 95%;
-
 }
+  .showsPicture {
+    margin: 0 auto;
+    max-width: 75%;
+  }
 
 nav {
   /*border: green solid 1px;*/
@@ -209,15 +219,20 @@ nav ul {
 
 nav ul li {
   /*border: red solid 1px;*/
-  
   min-width: 90%;
 }
 .nav-item {
   width: 100%;
   text-align: center;
   border-radius: 1.5rem;
- 
   padding-left: 1.5rem;
 }
 
-} /* End Media Call 1175px */
+} /* End Media Call 1500px */
+
+@media (max-width: 1000px) {
+  .services {
+    flex-direction: column;
+  }
+
+} /* End Media Call 1000px */

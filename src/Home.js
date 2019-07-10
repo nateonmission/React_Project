@@ -29,7 +29,7 @@ class Home extends Component {
             <div className='lcars-bracket left hollow'></div>
             <div className='innerContainer ICRight'>
               <p>LCARS Access - Select media from the menu above. 
-              Titles will appear in the frame to the LEFT. Click on a title to get more information in this frame.</p>
+              Titles will appear in the other frame. Click on a title to get more information in this frame.</p>
             </div>
             <div className='lcars-bracket right hollow'></div>
           </div>

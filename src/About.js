@@ -27,22 +27,18 @@ class About extends Component {
           <div className='subContainer'>
             <div className='lcars-bracket left hollow'></div>
             <div className='innerContainer'>
-              <ul>
+              <ul className='about'>
                 <li>
-                Welcome to [Project Name]! I designed this app as a project for
-                CodeLouisville. Its function is Lorem ipsum dolor sit amet, 
-                consectetur adipiscing elit. Praesent leo odio, 
-                lobortis eleifend consectetur non, iaculis pulvinar purus. 
-                Aenean tempus ut diam et dictum. Quisque posuere lectus a 
-                turpis fermentum, nec dictum lacus finibus. Mauris in sodales 
-                arcu. Fusce convallis quis magna sit amet molestie.
+                LCARS Streaming Search - This React app pulls a list of Star Trek series or movies, then lets the user select one from the list to get a link to a streaming service.
                 </li>
+                <li>Lists of shows and movies provided by Star Trek API: stapi.co</li>
+                <li>Streaming information provided by Utelly</li>
                 <li>
                   LCARS CSS FrameWork from http://joernweissenborn.github.io/lcars/
                 </li>
                 <li>stapi.co = StarTrek API that pulls from MemoryAlpha</li>
                 <li>
-                  Star Fleet Logo made by 
+                  Star Fleet Logo made by
                   <a href="https://www.flaticon.com/authors/those-icons" title="Those Icons">Those Icons</a>
                     from
                   <a href="https://www.flaticon.com/" 	title="Flaticon">www.flaticon.com</a>

@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import Logo from './Logo'
 import ShowsMenu from './ShowsMenu'
 import ShowResult from './ShowResult'
-// import { thisTypeAnnotation } from '@babel/types'
-
-// import SplitScreen from './SplitScreen'
 
 class Shows extends Component {
   constructor (props) {

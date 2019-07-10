@@ -12,15 +12,15 @@ class ShowMenu extends Component {
   } // End constructor
 
   render () {
-    var { isLoadedInfo, shows, showsInfo, getShowInfo } = this.state
+    var { shows, getShowInfo } = this.state
     // console.log(this.state)
     return (
       <ul className='showsMenu'>
         {shows.map(show => <li className='listItem' key={show.uid} onClick={() => {
-          getShowInfo(show.title) //, showsInfo, isLoadedInfo)
-          // console.log(this.state)
+          getShowInfo(show.title)
         }}>
-          {show.title}&nbsp;({show.abbreviation}) {show.productionStartYear} - {show.productionEndYear} </li>)}
+          {show.title}&nbsp;({show.abbreviation}) {show.productionStartYear}-
+          {show.productionEndYear} </li>)}
       </ul>
     )
   }
