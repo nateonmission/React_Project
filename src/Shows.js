@@ -18,16 +18,27 @@ class Shows extends Component {
 
   componentDidMount () {
     var { apitag } = this.state
-    fetch(`http://stapi.co/api/v1/rest/${apitag}/search?`)
-      .then(res => res.json())
-      .then(json => {
-        json.series.sort((a, b) => a.productionStartYear - b.productionStartYear)
-        this.setState({
-          isLoaded: true,
-          shows: json.series
+    if (apitag === 'movie') {
+      fetch(`http://stapi.co/api/v1/rest/${apitag}/search?`)
+        .then(res => res.json())
+        .then(json => {
+          json.movies.sort((a, b) => parseInt(a.usReleaseDate.slice(0, 4)) - parseInt(b.usReleaseDate.slice(0, 4)))
+          this.setState({
+            isLoaded: true,
+            shows: json.movies
+          })
         })
-      })
-    console.log('shows')
+    } else {
+      fetch(`http://stapi.co/api/v1/rest/${apitag}/search?`)
+        .then(res => res.json())
+        .then(json => {
+          json.series.sort((a, b) => a.productionStartYear - b.productionStartYear)
+          this.setState({
+            isLoaded: true,
+            shows: json.series
+          })
+        })
+    }
   }
 
   getShowInfo (showTitle) {
@@ -52,7 +63,7 @@ class Shows extends Component {
       })
   }
 
-  render (getShowInfo) {
+  render () {
     var { isLoaded, isLoadedInfo, title, shows } = this.state
 
     if (!isLoaded) {

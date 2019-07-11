@@ -9,7 +9,6 @@ import './App.css'
 
 import Home from './Home'
 import Shows from './Shows'
-import Movies from './Movies'
 import About from './About'
 import Navagation from './Navagation'
 
@@ -22,11 +21,8 @@ const App = () => (
         <Route exact path='/shows' render={() => <Shows
           title='Star Trek TV Series'
           apitag='series'
-          // getShowInfo={getShowInfo}
-          // showsInfo={state.showsInfo}
-          // isLoadedInfo={state.isLoadedInfo}
         />} />
-        <Route exact path='/movies' render={() => <Movies
+        <Route exact path='/movies' render={() => <Shows
           title='Star Trek Movies'
           apitag='movie'
         />} />
