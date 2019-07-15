@@ -12,7 +12,7 @@ Simply click on SHOWS or MOVIES, then check on the name of the series or movie y
 1. The API endpoints used are:
 * http://stapi.co/api/v1/rest/series/search?
 * http://stapi.co/api/v1/rest/movie/search?
-* https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=[NAME OF SHOW OR MOVIE]&country=us
+* https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=[NAME_OF_SHOW_OR_MOVIE]&country=us
 
 2. Other Requirements:
 * The page is responsive to different sized screens.
