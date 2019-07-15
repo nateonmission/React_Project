@@ -6,24 +6,26 @@ class ShowResult extends Component {
     this.state = {
       isLoadedInfo: props.isLoadedInfo,
       showsInfo: props.showsInfo,
-      showLocations: props.showsInfo.locations
+      omdb: props.omdb
     } // End state
   } // End constructor
 
   render () {
-    var { isLoadedInfo, showsInfo, showLocations } = this.state
-    console.log(isLoadedInfo, showsInfo)
+    var { isLoadedInfo, showsInfo, omdb } = this.state
+    console.log(isLoadedInfo, showsInfo, omdb)
 
     if (!isLoadedInfo) {
-      console.log(showsInfo.length)
+      console.log('showinf: ' + showsInfo.length)
       return <div className='content'>Loading...</div>
-    } else if (showLocations.length) {
+    } else if (showsInfo.name) {
+      console.log('showinf: ' + showsInfo.length)
       return (
         <div className='resultsMenu'>
-          <img className='showsPicture' src={showsInfo.picture} />
-          { showsInfo.name }
+          <img className='showsPicture' src={omdb.Poster} />
+          <h2> { showsInfo.name } </h2>
+          <p>{ omdb.Plot } </p>
           <div className='services'>
-            {showLocations.map(showLoc =>
+            {showsInfo.locations.map(showLoc =>
               <a href={showLoc.url} target='_blank' key={showLoc.id}>
                 <img src={showLoc.icon} alt={showLoc.name} className='servicesItem' />
               </a>

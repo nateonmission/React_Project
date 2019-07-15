@@ -12,7 +12,9 @@ class Shows extends Component {
       title: props.title,
       shows: [],
       apitag: props.apitag,
-      showsInfo: []
+      showsInfo: [],
+      safe: false,
+      omdb: []
     } // End state
   } // End constructor
 
@@ -43,8 +45,17 @@ class Shows extends Component {
 
   getShowInfo (showTitle) {
     this.setState(prevState => ({
-      isLoadedInfo: false
+      isLoadedInfo: false,
+      omdb: [],
+      showsInfo: []
     }))
+    fetch(`http://www.omdbapi.com/?t=${showTitle}&apikey=78458461`)
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          omdb: json
+        })
+      })
     fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${showTitle}&country=us`, {
       method: 'GET',
       headers: {
@@ -64,7 +75,7 @@ class Shows extends Component {
   }
 
   render () {
-    var { isLoaded, isLoadedInfo, title, shows } = this.state
+    var { isLoaded, isLoadedInfo, title, shows, omdb } = this.state
 
     if (!isLoaded) {
       return <div className='content'>Loading...</div>
@@ -97,6 +108,7 @@ class Shows extends Component {
                     : <ShowResult
                       isLoadedInfo={this.state.isLoadedInfo}
                       showsInfo={this.state.showsInfo}
+                      omdb={this.state.omdb}
                     />
                   }
                 </ul>
