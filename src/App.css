@@ -31,6 +31,10 @@
   font-size: 1.7REM;
 }
 
+.text {
+  font-size: 1REM;
+}
+
 h1 {
   margin: -1REM auto 2REM;
   font-family: 'Rambla', sans-serif;
@@ -44,6 +48,9 @@ nav {
   margin: 0 auto;
   max-width: 80%;
   font-family: 'Rambla', sans-serif;
+}
+a.normal {
+  color: dodgerblue;
 }
 
 a.active {

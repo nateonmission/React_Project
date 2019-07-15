@@ -10,9 +10,10 @@ Simply click on SHOWS or MOVIES, then check on the name of the series or movie y
 ## Features & Requirements
 
 1. The API endpoints used are:
-* http://stapi.co/api/v1/rest/series/search?
-* http://stapi.co/api/v1/rest/movie/search?
-* https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=[NAME_OF_SHOW_OR_MOVIE]&country=us
+* http://stapi.co/api/v1/rest/series/search? == Delivers names of series from STAPI
+* http://stapi.co/api/v1/rest/movie/search? == Delivers names of Movies from STAPI
+* https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=[NAME_OF_SHOW_OR_MOVIE]&country=us  == Locates streaming services from uTelly
+* http://www.omdbapi.com/?t=${showTitle}&apikey=78458461 == Grabs poster and description of show/movie
 
 2. Other Requirements:
 * The page is responsive to different sized screens.
