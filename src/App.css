@@ -26,6 +26,11 @@
   color: white;
 }
 
+.lcars-title p {
+  margin: -.5REM;
+  font-size: 1.7REM;
+}
+
 h1 {
   margin: -1REM auto 2REM;
   font-family: 'Rambla', sans-serif;
@@ -168,6 +173,14 @@ ul.listItem {
   list-style: none;
 }
 
+.showName {
+  color: #9cf;
+}
+
+.showDesc {
+  color: #9cf;
+}
+
 /********** LCARS Mods **********/
 .lcars-bracket {
   min-width: 2REM;
@@ -182,6 +195,12 @@ ul.listItem {
     pointer-events: none;
     padding: 1REM;
   }
+
+  .lcars-title p {
+    margin: 0REM;
+    font-size: 1.2REM;
+  }
+
 nav ul {
   display: flex;
   flex-direction: column;
@@ -235,4 +254,71 @@ nav ul li {
     flex-direction: column;
   }
 
+  .lcars-title p {
+    margin: -.08REM;
+    font-size: 1REM;
+  }
+
+  .lcars-u-1 {
+    display: none;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  #container {
+    padding: 0;
+    margin: 0;
+  }
+
+  #root {
+    width: 100%;
+  }
+
+  .lcars-bracket {
+    min-width: .5REM;
+  }
+
+  .lcars-app-container {
+    display: flex;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    overflow: hidden;
+    margin: 0.5rem;
+  }
+  .lcars-app-container #left-menu {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    left: 0.5rem;
+  }
+  .lcars-app-container #header {
+    position: fixed;
+    background-color: #000;
+    width: calc(100% - 1rem);
+    top: 0;
+    left: 0.5rem;
+    padding-top: 0.5rem;
+    margin-bottom: 0.25rem;
+    z-index: 1;
+  }
+  .lcars-app-container #footer {
+    background-color: #000;
+    bottom: 0;
+    left: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: calc(100% - 1rem);
+    z-index: 1;
+  }
+  .lcars-app-container #container {
+    margin-top: 5REM;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
 } /* End Media Call 1000px */

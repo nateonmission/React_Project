@@ -22,8 +22,8 @@ class ShowResult extends Component {
       return (
         <div className='resultsMenu'>
           <img className='showsPicture' src={omdb.Poster} />
-          <h2> { showsInfo.name } </h2>
-          <p>{ omdb.Plot } </p>
+          <h2 className='showName'> { showsInfo.name } </h2>
+          <p className='showDesc'>{ omdb.Plot } </p>
           <div className='services'>
             {showsInfo.locations.map(showLoc =>
               <a href={showLoc.url} target='_blank' key={showLoc.id}>
