@@ -12,16 +12,14 @@ class ShowResult extends Component {
 
   render () {
     var { isLoadedInfo, showsInfo, omdb } = this.state
-    console.log(isLoadedInfo, showsInfo, omdb)
+    console.log(isLoadedInfo, showsInfo, omdb, showsInfo)
 
-    if (!isLoadedInfo) {
-      console.log('showinf: ' + showsInfo.length)
+    if (!isLoadedInfo && showsInfo.length > 0) {
       return <div className='content'>Loading...</div>
-    } else if (showsInfo.name) {
-      console.log('showinf: ' + showsInfo.length)
+    } else if (showsInfo) {
       return (
         <div className='resultsMenu'>
-          <img className='showsPicture' src={omdb.Poster} />
+          <img className='showsPicture' src={omdb.length ? omdb.Poster : showsInfo.picture} />
           <h2 className='showName'> { showsInfo.name } </h2>
           <p className='showDesc'>{ omdb.Plot } </p>
           <div className='services'>
@@ -34,10 +32,11 @@ class ShowResult extends Component {
         </div>
       )
     } else { // else if
-      return <div className='content'>
-        Data Unavailable through Utelly
-      </div>
-    }
+      return (
+        <div className='resultsMenu'>
+          <h2 className='results'>Streaming Information is Unavailable through uTelly</h2>
+        </div>
+      )}
   } // render
 } // ShowResult
 export default ShowResult

@@ -39,15 +39,15 @@ class About extends Component {
 
                 <h3>Features &amp; Requirements</h3>
 
-                1. The API endpoints used are:
-                * http://stapi.co/api/v1/rest/series/search? == Delivers names of series from STAPI
-                * http://stapi.co/api/v1/rest/movie/search? == Delivers names of Movies from STAPI
-                * https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=[NAME_OF_SHOW_OR_MOVIE]&amp;country=us  == Locates streaming services from uTelly
-                * http://www.omdbapi.com/?t=SHOWTITLE&amp;apikey=78458461 == Grabs poster and description of show/movie
-
-                2. Other Requirements:
-                * The page is responsive to different sized screens.
-
+                1. The API endpoints used are:<br />
+                * http://stapi.co/api/v1/rest/series/search? == Delivers names of series from STAPI<br />
+                * http://stapi.co/api/v1/rest/movie/search? == Delivers names of Movies from STAPI<br />
+                * https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=[NAME_OF_SHOW_OR_MOVIE]&amp;country=us  == Locates streaming services from uTelly<br />
+                * http://www.omdbapi.com/?t=SHOWTITLE&amp;apikey=78458461 == Grabs poster and description of show/movie<br />
+                <br /><br />
+                2. Other Requirements:<br />
+                * The page is responsive to different sized screens.<br />
+                
                 <h3>Dependencies</h3>
                 * The front-end uses an LCARS framework (http://joernweissenborn.github.io/lcars/)
 

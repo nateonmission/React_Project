@@ -40,6 +40,11 @@ h1 {
   font-family: 'Rambla', sans-serif;
 }
 
+h2.results {
+  font-size: 2REM;
+  color: dodgerblue;
+}
+
 .App-link {
   color: #61dafb;
 }

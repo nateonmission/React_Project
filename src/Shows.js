@@ -13,7 +13,6 @@ class Shows extends Component {
       shows: [],
       apitag: props.apitag,
       showsInfo: [],
-      safe: false,
       omdb: []
     } // End state
   } // End constructor
@@ -70,12 +69,11 @@ class Shows extends Component {
           isLoadedInfo: true,
           showsInfo: json.results[0]
         }))
-        console.log(showTitle, this.state.showsInfo, this.state.isLoadedInfo)
       })
   }
 
   render () {
-    var { isLoaded, isLoadedInfo, title, shows, omdb } = this.state
+    var { isLoaded, isLoadedInfo, title, shows } = this.state
 
     if (!isLoaded) {
       return <div className='content'>Loading...</div>
