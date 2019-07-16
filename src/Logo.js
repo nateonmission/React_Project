@@ -1,3 +1,4 @@
+/* This module just renders the Delta Shield logo */
 import React, { Component } from 'react'
 import logo from './logo.svg'
 

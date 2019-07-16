@@ -1,3 +1,5 @@
+/********** General Settings **********/
+/* Basic page setup */
 .App {
   text-align: center;
 }
@@ -8,13 +10,10 @@
   pointer-events: none;
   padding: 1REM;
   margin: auto;
-  /*border: darkgray solid 5px;*/
 }
 
 .App-body {
-  background-color: black; /*#282c34;*/
-  /*border: darkgray solid 5px;*/
-  /*border-radius: 10%;*/
+  background-color: black; 
   min-height: 100vh;
   min-width: 80vw;
   display: flex;
@@ -26,6 +25,7 @@
   color: white;
 }
 
+/* Specific components */
 .lcars-title p {
   margin: -.5REM;
   font-size: 1.7REM;
@@ -49,6 +49,23 @@ h2.results {
   color: #61dafb;
 }
 
+.content {
+  margin: 1REM;
+  padding: 1REM;
+  border-radius: 10%;
+  min-width: 70vw;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* NAVAGATIOIN */
 nav {
   margin: 0 auto;
   max-width: 80%;
@@ -68,13 +85,7 @@ nav ul {
   justify-content: center;
   padding: 0;
   list-style: none;
-  /*border: darkgray solid 0.25 REM;*/
 }
-/*
-nav ul li {
-  margin: 0.2REM;
-  padding: 0;
-}*/
 
 nav a:hover {
   background-color: #c69 !important;
@@ -95,32 +106,13 @@ nav a:hover {
   color: black;
 }
 
-
-.content {
-  margin: 1REM;
-  padding: 1REM;
-  /* border: darkgray solid 0.25REM; */
-  border-radius: 10%;
-  min-width: 70vw;
-}
-
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .splitDiv {
   justify-content: space-around;
   display: flex;
   margin: 0 auto;
 }
 
+/* Containers */
 .subContainer {
   display: flex;
   max-width: 45%;
@@ -130,7 +122,6 @@ nav a:hover {
   width: 100%;
   display: flex;
   justify-content: center;
-  /*border: #61dafb solid 1px;*/
 }
 
 .showsPicture {
@@ -138,7 +129,7 @@ nav a:hover {
   max-width: 85%;
 }
 
-/********** Media Lists Menu **********/
+/* Media Lists Menu */
 .showsMenu {
   list-style: none;
 }
@@ -180,7 +171,7 @@ ul.listItem {
   border: solid 0.5REM rgb(24, 128, 212);
 }
 
-/********** Media Info Content **********/
+/* Media Info Content */
 .showsContent ul {
   list-style: none;
 }
@@ -201,63 +192,58 @@ ul.listItem {
 /********** Media Calls **********/
 
 @media (max-width: 1500px) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 20vmin;
-    pointer-events: none;
-    padding: 1REM;
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 20vmin;
+      pointer-events: none;
+      padding: 1REM;
+    }
+
+    .lcars-title p {
+      margin: 0REM;
+      font-size: 1.2REM;
+    }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
   }
 
-  .lcars-title p {
-    margin: 0REM;
-    font-size: 1.2REM;
-  }
-
-nav ul {
-  display: flex;
-  flex-direction: column;
-}
-
-.splitDiv {
-  /*justify-content: space-around;*/
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.subContainer {
-  margin: 1REM;
-  font-size: 1.5REM;
-  display: flex;
-  max-width: 95%;
-}
-  .showsPicture {
+  .splitDiv {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
     margin: 0 auto;
-    max-width: 75%;
   }
 
-nav {
-  /*border: green solid 1px;*/
-  
-  width: 100%;
-}
+  .subContainer {
+    margin: 1REM;
+    font-size: 1.5REM;
+    display: flex;
+    max-width: 95%;
+  }
+    .showsPicture {
+      margin: 0 auto;
+      max-width: 75%;
+    }
 
-nav ul {
-  /*border: blue solid 1px;*/
-  align-content: center;
-}
+  nav {
+    width: 100%;
+  }
 
-nav ul li {
-  /*border: red solid 1px;*/
-  min-width: 90%;
-}
-.nav-item {
-  width: 100%;
-  text-align: center;
-  border-radius: 1.5rem;
-  padding-left: 1.5rem;
-}
+  nav ul {
+    align-content: center;
+  }
+
+  nav ul li {
+    min-width: 90%;
+  }
+  .nav-item {
+    width: 100%;
+    text-align: center;
+    border-radius: 1.5rem;
+    padding-left: 1.5rem;
+  }
 
 } /* End Media Call 1500px */
 

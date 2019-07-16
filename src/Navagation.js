@@ -1,3 +1,4 @@
+/* This module just setups up the navagation menu */
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 

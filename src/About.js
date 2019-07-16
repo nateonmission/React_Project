@@ -1,3 +1,5 @@
+/* This page simply describes the what the app is */
+
 import React, { Component } from 'react'
 import logo from './logo.svg'
 

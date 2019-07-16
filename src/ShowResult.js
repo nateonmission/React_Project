@@ -1,3 +1,5 @@
+/* This module parses the data received from OMDB and uTelly */
+
 import React, { Component } from 'react'
 
 class ShowResult extends Component {
@@ -12,8 +14,8 @@ class ShowResult extends Component {
 
   render () {
     var { isLoadedInfo, showsInfo, omdb } = this.state
-    console.log(isLoadedInfo, showsInfo, omdb, showsInfo)
 
+    // This IF prevents the app from crashing if no info is received from uTelly
     if (!isLoadedInfo && showsInfo.length > 0) {
       return <div className='content'>Loading...</div>
     } else if (showsInfo) {
@@ -31,7 +33,7 @@ class ShowResult extends Component {
           </div>
         </div>
       )
-    } else { // else if
+    } else {
       return (
         <div className='resultsMenu'>
           <h2 className='results'>Streaming Information is Unavailable through uTelly</h2>

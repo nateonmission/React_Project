@@ -1,3 +1,7 @@
+/*
+This is the primary module in the app. It creates the routes to the various pages and imports the primary files.
+*/
+
 import React from 'react'
 
 import {

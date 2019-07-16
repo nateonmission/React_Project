@@ -1,3 +1,4 @@
+/* This module rendered the list of shows/menu */
 import React, { Component } from 'react'
 
 class ShowMenu extends Component {
@@ -14,7 +15,6 @@ class ShowMenu extends Component {
 
   render () {
     var { shows, getShowInfo, apitag } = this.state
-    console.log(apitag)
     if (apitag === 'series') {
       return (
         <ul className='showsMenu'>

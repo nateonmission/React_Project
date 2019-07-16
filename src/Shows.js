@@ -1,3 +1,5 @@
+/* This is primary active module that does the work of the app */
+
 import React, { Component } from 'react'
 import Logo from './Logo'
 import ShowsMenu from './ShowsMenu'
@@ -17,6 +19,7 @@ class Shows extends Component {
     } // End state
   } // End constructor
 
+  // This function loads the names of all the Star Trek series or movies from STAPI
   componentDidMount () {
     var { apitag } = this.state
     if (apitag === 'movie') {
@@ -42,6 +45,7 @@ class Shows extends Component {
     }
   }
 
+  // Once the user clicks on the name of a movie/series, this function pulls info from OMDB and uTelly
   getShowInfo (showTitle) {
     this.setState(prevState => ({
       isLoadedInfo: false,
@@ -72,6 +76,7 @@ class Shows extends Component {
       })
   }
 
+  // This re-renders the dual boxes
   render () {
     var { isLoaded, isLoadedInfo, title, shows } = this.state
 
