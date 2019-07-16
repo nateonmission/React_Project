@@ -21,7 +21,7 @@ class ShowResult extends Component {
     } else if (showsInfo) {
       return (
         <div className='resultsMenu'>
-          <img className='showsPicture' src={omdb.length ? omdb.Poster : showsInfo.picture} />
+          <img className='showsPicture' src={omdb ? omdb.Poster : showsInfo.picture} />
           <h2 className='showName'> { showsInfo.name } </h2>
           <p className='showDesc'>{ omdb.Plot } </p>
           <div className='services'>

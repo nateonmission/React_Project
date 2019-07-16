@@ -5,7 +5,9 @@ This REACT app loads the names of Star Trek series or movies from an API. The us
 
 ## Usage
 
-Simply click on SHOWS or MOVIES, then check on the name of the series or movie you want to see. You will then be presented with streaming options (if available). Clicking on the link will open a new window.
+Simply run: npm start<br><br>
+
+Then, click on SHOWS or MOVIES, then check on the name of the series or movie you want to see. You will then be presented with streaming options (if available). Clicking on the link will open a new window.
 
 ## Features & Requirements
 

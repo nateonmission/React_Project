@@ -52,13 +52,6 @@ class Shows extends Component {
       omdb: [],
       showsInfo: []
     }))
-    fetch(`http://www.omdbapi.com/?t=${showTitle}&apikey=78458461`)
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          omdb: json
-        })
-      })
     fetch(`https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${showTitle}&country=us`, {
       method: 'GET',
       headers: {
@@ -74,9 +67,17 @@ class Shows extends Component {
           showsInfo: json.results[0]
         }))
       })
+    fetch(`http://www.omdbapi.com/?t=${showTitle}&apikey=78458461`)
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          omdb: json
+        })
+      })
+
   }
 
-  // This re-renders the dual boxes
+  // This re-renders the dual
   render () {
     var { isLoaded, isLoadedInfo, title, shows } = this.state
 
