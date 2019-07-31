@@ -88,7 +88,7 @@ nav ul {
 }
 
 nav a:hover {
-  background-color: #c69 !important;
+  background-color: #746 !important;
 }
 
 nav a:active {
@@ -141,6 +141,12 @@ ul.listItem {
 .listItem {
   font-size: 1.5REM;
   margin: 0REM 1REM 0REM -2REM;
+  color: #000;
+  background-color: #f93;
+  margin: 0.25REM;
+  padding-left: 1REM;
+  padding-right: 1REM;
+  border-radius: 1.5REM;
   
 }
 
